@@ -1,0 +1,131 @@
+<div class="background"></div>
+<div class="hide"></div>
+<div class="header">
+<h1>Welcome to Our Question Site</h1>
+<hr>
+</div>
+
+<div class="card">
+    <form #myForm="ngForm" class="form" (ngSubmit)="handleSubmit(myForm) " *ngIf="showForm">
+        <div class="form-details">
+        <p class="form-title">In this Form You will determend how much of a disappointment you will be if you were born to
+            an asian parents</p>
+
+
+
+
+        <!-- Quest1 -->
+
+
+
+        <!-- Title -->
+        <div>
+
+            <p class="form-field">Do you smoke Cigarete ?:</p>
+        </div>
+        <!-- Title -->
+
+
+
+        <div>
+            <input ngModel type="radio" id="cigarete-yes" name="cigarate" value="Yes">
+            <label for="cigarete-yes">Yes</label>
+        </div>
+        <div>
+            <input ngModel type="radio" id="cigarete-no" name="cigarate" value="No">
+            <label for="cigarete-no">No</label>
+        </div>
+
+        <!-- Quest1 -->
+
+
+
+        <!-- Quest2 -->
+
+
+        <!-- Title -->
+        <div>
+            <p class="form-field">Do you have a Degree ?:</p>
+        </div>
+        <!-- Title -->
+
+
+
+        <div>
+            <input ngModel type="radio" id="degree-yes" name="degree" value="Yes">
+            <label for="degree-yes">Yes</label>
+        </div>
+        <div>
+            <input ngModel type="radio" id="degree-no" name="degree" value="No">
+            <label for="degree-no">No</label>
+        </div>
+        <!-- Quest2 -->
+
+        
+        <!-- Title -->
+        <div>
+            <p class="form-field">How much hours you work a day :</p>
+        </div>
+        <!-- Title -->
+        <div>
+        <input ngModel type="number" name="hours" (mouseleave)="toggleLabel()" (mouseenter)="toggleLabelOff()">
+        <br>
+        <label *ngIf="showLabel" class="harder" >You can work more hours...</label>
+    </div>
+
+
+        <!-- Quest3 -->
+
+
+        <!-- Title -->
+        <div>
+            <p class="form-field">Do you know Software development ? :</p>
+        </div>
+        <!-- Title -->
+
+
+
+        <div>
+            <input ngModel type="radio" id="software-yes" name="software" value="Yes">
+            <label for="software-yes">Yes</label>
+        </div>
+        <div>
+            <input ngModel type="radio" id="software-no" name="software" value="No">
+            <label for="software-no">No</label>
+        </div>
+        <!-- Quest3 -->
+
+
+
+
+    <!-- Quest4 -->
+
+
+
+        <!-- Quest2 -->
+    <div>
+        <button type="submit" class="btn btn-primary submit" >Submit</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <p class="form-field">Hope you wont be a dissapointment...</p>
+    <br>
+    <br>
+    
+    </div>
+</div>
+<div class="topbar"></div>
+
+    </form>
+</div>
+
+<div class="card" *ngIf="!showForm">
+    <div class="details"> 
+    <p class="form-field">Your Asian Dad Will Say This : </p>
+    <img src="{{asianDad}}" alt="">
+    <p class="form-field">{{dadWords}}</p>
+    <button class="btn btn-primary" (click)="changeForms()">Return</button>
+    </div>
+</div>

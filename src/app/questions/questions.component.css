@@ -103,3 +103,12 @@ img{
 .details{
     padding: 0px 40%;
 }
+.card-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.dad{
+    position: absolute;
+    left: 60%;
+    top: 80%;
+}

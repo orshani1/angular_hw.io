@@ -11,6 +11,7 @@ export class QuestionsComponent implements OnInit {
   showLabel:boolean = false;
   asianDad:string = 'https://i.kym-cdn.com/entries/icons/original/000/002/635/d68.jpg';
   dadWords:string = '';
+  showDadWords:boolean = false;
   constructor() {
 
 
@@ -57,5 +58,31 @@ export class QuestionsComponent implements OnInit {
   }
   changeForms(){
     this.showForm = true;
+    this.showDadWords = false;
   }
+  SaveDadWords(){
+    localStorage.setItem('dad_words',this.dadWords);
+  }
+  adjustDadWords(){
+
+  }
+  showDadLastWords(){
+    let localDadWords = JSON.stringify(localStorage.getItem("dad_words"));
+    if(localDadWords !== null || localDadWords !== undefined){
+      this.dadWords = localDadWords;
+      this.dadWords.trim();
+      
+      
+    }
+    if(this.dadWords === null || this.dadWords === undefined){
+      this.dadWords = "i dont have anything to say to you yet ....";
+    }
+    this.showDadWords = true;
+    console.log(this.dadWords)
+    
+  }
+  DeleteDadWords(){
+    localStorage.removeItem("dad_words");
+  }
+ 
 }
